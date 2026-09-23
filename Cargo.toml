@@ -1,0 +1,25 @@
+[package]
+name = "sentinel-lex"
+version = "1.0.0"
+edition = "2024"
+authors = ["Ishant5436 <ishant.p@somaiya.edu>"]
+description = "Deterministic Agentic Compliance & Pre-Execution Protection Firewall"
+license = "MIT"
+
+[dependencies]
+alloy = { version = "2.3.0", features = ["rlp", "consensus", "rpc-types", "network", "providers", "k256", "sol-types"] }
+alloy-sol-types = "1.6.1"
+dotenvy = "0.15.7"
+hmac = "0.12"
+http-body-util = "0.1.4"
+hyper = { version = "1.11.0", features = ["full"] }
+hyper-util = { version = "0.1.20", features = ["full"] }
+reqwest = { version = "0.13.4", features = ["blocking", "json"] }
+revm = "42.0.1"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+sha2 = "0.10"
+tokio = { version = "1.53.1", features = ["full"] }
+
+[dev-dependencies]
+tokio-test = "0.4"
