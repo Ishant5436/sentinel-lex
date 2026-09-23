@@ -52,11 +52,7 @@ pub fn validate_timestamp(timestamp_secs: u64, now_secs: u64) -> Result<(), Auth
     assert!(now_secs > 0, "Current time must be strictly positive");
     assert!(timestamp_secs > 0, "Request timestamp must be strictly positive");
 
-    let delta = if timestamp_secs > now_secs {
-        timestamp_secs - now_secs
-    } else {
-        now_secs - timestamp_secs
-    };
+    let delta = timestamp_secs.abs_diff(now_secs);
 
     if delta > MAX_TIMESTAMP_DRIFT_SECS {
         return Err(AuthError::TimestampExpired { delta });
@@ -116,7 +112,7 @@ mod hex {
 
     pub fn decode(s: &str) -> Result<Vec<u8>, AuthError> {
         assert!(s.len() <= 128, "Hex string length must be bounded");
-        if s.len() % 2 != 0 {
+        if !s.len().is_multiple_of(2) {
             return Err(AuthError::InvalidSignature);
         }
         let mut bytes = Vec::with_capacity(s.len() / 2);
