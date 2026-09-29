@@ -56,8 +56,7 @@ async fn handle_request(req: Request<hyper::body::Incoming>, state: AppState) ->
         let health = serde_json::json!({
             "status": "healthy",
             "service": "sentinel-lex",
-            "compliance": "ISO/DIS 9001:2026",
-            "invariants": "Deterministic Safety Standards",
+            "invariants": "Power-of-10 style: bounded allocations, no recursion, bounded function length, assertion density",
             "fail_open": state.fail_open,
             "upstream": state.upstream_url
         });

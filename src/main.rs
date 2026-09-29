@@ -35,7 +35,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 
     println!("============================================================");
     println!("  SENTINEL-LEX: AGENTIC COMPLIANCE & REVERT FIREWALL        ");
-    println!("  Compliance: ISO/DIS 9001:2026 | Safety: Deterministic Standards   ");
+    println!("  Safety Invariants: Power-of-10 style (bounded alloc, no recursion)  ");
     println!("  Listening on: http://{}", addr);
     println!("  Upstream RPC: {}", upstream_url);
     println!("  Fail-Open Policy: {}", fail_open);

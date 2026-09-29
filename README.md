@@ -75,9 +75,9 @@ make test
 ```
 
 ### Output Evidence:
-- **Rust Unit & Integration Tests:** 43 passed, 0 failed, 0 ignored (0.09s).
-- **Node.js Client SDK Tests:** 4 passed, 0 failed (0.03s).
-- **Total Test Suites:** 47/47 passing green.
+- **Rust Unit & Integration Tests:** 47 passed, 0 failed, 0 ignored (across all binaries, well under 1s).
+- **Node.js Client SDK Tests:** 4 passed, 0 failed (<0.1s).
+- **Total Test Suites:** 51/51 passing green.
 
 ### Benchmark Latency:
 - **Cached In-Memory Simulation:** < 12 ms per transaction.
